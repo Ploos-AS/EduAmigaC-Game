@@ -11,7 +11,7 @@
 - [x] Define toolchain and runtime dependencies.
 - [x] Define repository directory convention.
 - [x] Add licensing files and source-level licensing policy.
-- [ ] Add publishing integration.
+- [x] Add publishing integration.
 - [ ] Add CI skeleton.
 - [x] Add track parity matrix.
 
