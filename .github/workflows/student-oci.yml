@@ -27,7 +27,7 @@ jobs:
     timeout-minutes: 90
     steps:
       - name: Checkout course
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Build student OCI
         run: docker build --progress=plain -f Containerfile -t eduamigac-game:ci .
