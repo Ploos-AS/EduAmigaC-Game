@@ -9,7 +9,11 @@ m68k-amigaos-gcc --version | head -n 1
 
 echo "== plain C =="
 make -C "$ROOT/tests/smoke/plain" clean all
-file "$ROOT/tests/smoke/plain/hello" || true
+file "$ROOT/tests/smoke/plain/hello"
+file "$ROOT/tests/smoke/plain/hello" | grep -qi "Amiga" || {
+  echo "ERROR: plain smoke output is not recognized as an Amiga binary." >&2
+  exit 20
+}
 
 echo "== ACE =="
 rm -rf "$ROOT/tests/smoke/ace/build"
