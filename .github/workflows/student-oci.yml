@@ -35,7 +35,6 @@ jobs:
       - name: Run smoke tests
         run: |
           docker run --rm \
-            -v "$PWD:/workspace" \
-            -w /workspace \
+            -v "$PWD:/source:ro" \
             eduamigac-game:ci \
-            sh tests/smoke/run.sh
+            sh -c 'cp -a /source/. /workspace/ && sh tests/smoke/run.sh'
