@@ -1,0 +1,41 @@
+name: Student OCI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Containerfile"
+      - "compose.yaml"
+      - "container/**"
+      - "tests/smoke/**"
+      - ".github/workflows/student-oci.yml"
+  pull_request:
+    paths:
+      - "Containerfile"
+      - "compose.yaml"
+      - "container/**"
+      - "tests/smoke/**"
+      - ".github/workflows/student-oci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout course
+        uses: actions/checkout@v4
+
+      - name: Build student OCI
+        run: docker build --progress=plain -t eduamigac-game:ci .
+
+      - name: Run smoke tests
+        run: |
+          docker run --rm \
+            -v "$PWD:/workspace" \
+            -w /workspace \
+            eduamigac-game:ci \
+            sh tests/smoke/run.sh
