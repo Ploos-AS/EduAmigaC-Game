@@ -12,13 +12,13 @@ variant = "slim"
 name = "m68k-amigaos-gcc"
 family = "Bebbo GCC"
 # Maintained source/mirror selection and immutable revision are validated before M1.
-source = "UNRESOLVED"
-revision = "UNRESOLVED"
+source = "https://github.com/AmigaPorts/m68k-amigaos-gcc.git"
+revision = "b58d16de6b9ca921825b8a1f1783a64224ad6cf4"
 prefix = "/opt/amiga"
 
 [ace]
 source = "https://github.com/AmigaPorts/ACE.git"
-revision = "UNRESOLVED"
+revision = "9e6ce064897cbd6b517d56fbd15da43919261a56"
 install_prefix = "/opt/ace"
 
 [sevgi]
