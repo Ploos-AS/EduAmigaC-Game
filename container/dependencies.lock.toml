@@ -1,0 +1,34 @@
+# Dependency lock
+
+# This file is the human-readable source of truth for student OCI dependencies.
+# Release builds must replace unresolved values before publication.
+
+[base]
+distribution = "debian"
+release = "bookworm"
+variant = "slim"
+
+[toolchain]
+name = "m68k-amigaos-gcc"
+family = "Bebbo GCC"
+# Maintained source/mirror selection and immutable revision are validated before M1.
+source = "UNRESOLVED"
+revision = "UNRESOLVED"
+prefix = "/opt/amiga"
+
+[ace]
+source = "https://github.com/AmigaPorts/ACE.git"
+revision = "UNRESOLVED"
+install_prefix = "/opt/ace"
+
+[sevgi]
+# Do not guess the upstream repository. Set this after the canonical Sevgi
+# Engine source has been identified and its redistribution/build requirements
+# have been reviewed.
+source = "UNRESOLVED"
+revision = "UNRESOLVED"
+install_prefix = "/opt/sevgi"
+
+[policy]
+moving_branches_allowed_in_release = false
+student_requires_ploos_infrastructure = false
