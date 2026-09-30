@@ -11,12 +11,17 @@ RUN apt-get update \
       libreadline-dev make patch rsync xz-utils \
  && rm -rf /var/lib/apt/lists/*
 
+COPY container/toolchain-components.lock /tmp/toolchain-components.lock
+COPY container/verify-toolchain-lock.sh /usr/local/bin/verify-toolchain-lock
+RUN chmod +x /usr/local/bin/verify-toolchain-lock
+
 WORKDIR /build
 RUN git clone https://github.com/AmigaPorts/m68k-amigaos-gcc.git \
  && cd m68k-amigaos-gcc \
  && git checkout "${AMIGA_GCC_REV}" \
  && test "$(git rev-parse HEAD)" = "${AMIGA_GCC_REV}" \
  && make update \
+ && /usr/local/bin/verify-toolchain-lock /tmp/toolchain-components.lock /build/m68k-amigaos-gcc/projects \
  && mkdir -p /opt/amiga \
  && make all -j"$(nproc)" PREFIX=/opt/amiga
 
