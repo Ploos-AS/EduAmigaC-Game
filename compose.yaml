@@ -8,3 +8,21 @@ services:
       - .:/workspace
     stdin_open: true
     tty: true
+
+  check:
+    build:
+      context: .
+      dockerfile: Containerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:ro
+    command: ["sh", "container/bootstrap.sh"]
+
+  smoke:
+    build:
+      context: .
+      dockerfile: Containerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    command: ["sh", "tests/smoke/run.sh"]
