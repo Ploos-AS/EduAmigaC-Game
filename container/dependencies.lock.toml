@@ -22,11 +22,9 @@ revision = "UNRESOLVED"
 install_prefix = "/opt/ace"
 
 [sevgi]
-# Do not guess the upstream repository. Set this after the canonical Sevgi
-# Engine source has been identified and its redistribution/build requirements
-# have been reviewed.
-source = "UNRESOLVED"
-revision = "UNRESOLVED"
+source = "https://github.com/alpyre/Sevgi_Engine.git"
+revision = "fcf1b2166351911d49baa6641cf7a359075721a2"
+branch = "master"
 install_prefix = "/opt/sevgi"
 
 [policy]
