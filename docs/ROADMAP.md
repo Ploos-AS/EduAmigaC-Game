@@ -9,7 +9,7 @@
 - [x] Define project ladder.
 - [x] Define target machine profiles.
 - [x] Define toolchain and runtime dependencies.
-- [ ] Define repository directory convention.
+- [x] Define repository directory convention.
 - [ ] Add licensing files and source-level licensing policy.
 - [ ] Add publishing integration.
 - [ ] Add CI skeleton.
