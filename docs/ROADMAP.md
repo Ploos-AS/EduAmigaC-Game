@@ -13,7 +13,7 @@
 - [ ] Add licensing files and source-level licensing policy.
 - [ ] Add publishing integration.
 - [ ] Add CI skeleton.
-- [ ] Add track parity matrix.
+- [x] Add track parity matrix.
 
 ## M1 — First playable
 
