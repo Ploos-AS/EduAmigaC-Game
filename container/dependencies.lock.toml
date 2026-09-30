@@ -16,6 +16,11 @@ source = "https://github.com/AmigaPorts/m68k-amigaos-gcc.git"
 revision = "b58d16de6b9ca921825b8a1f1783a64224ad6cf4"
 prefix = "/opt/amiga"
 
+[cmake_toolchains]
+source = "https://github.com/AmigaPorts/AmigaCMakeCrossToolchains.git"
+revision = "c579e46732af7398a09360dce4a6fb8d91d3f447"
+install_prefix = "/opt/course/deps/cmake-toolchains"
+
 [ace]
 source = "https://github.com/AmigaPorts/ACE.git"
 revision = "9e6ce064897cbd6b517d56fbd15da43919261a56"
