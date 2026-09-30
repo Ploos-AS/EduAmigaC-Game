@@ -25,7 +25,7 @@ FROM debian:bookworm-slim AS student
 ARG DEBIAN_FRONTEND=noninteractive
 ARG ACE_REV=9e6ce064897cbd6b517d56fbd15da43919261a56
 ARG SEVGI_REV=fcf1b2166351911d49baa6641cf7a359075721a2
-ARG CMAKE_TOOLCHAINS_REV=main
+ARG CMAKE_TOOLCHAINS_REV=c579e46732af7398a09360dce4a6fb8d91d3f447
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
@@ -42,6 +42,7 @@ RUN mkdir -p /opt/course/deps \
  && test "$(git -C /opt/course/deps/ace rev-parse HEAD)" = "${ACE_REV}" \
  && git clone https://github.com/AmigaPorts/AmigaCMakeCrossToolchains.git /opt/course/deps/cmake-toolchains \
  && git -C /opt/course/deps/cmake-toolchains checkout "${CMAKE_TOOLCHAINS_REV}" \
+ && test "$(git -C /opt/course/deps/cmake-toolchains rev-parse HEAD)" = "${CMAKE_TOOLCHAINS_REV}" \
  && git clone https://github.com/alpyre/Sevgi_Engine.git /opt/course/deps/sevgi \
  && git -C /opt/course/deps/sevgi checkout "${SEVGI_REV}" \
  && test "$(git -C /opt/course/deps/sevgi rev-parse HEAD)" = "${SEVGI_REV}"
