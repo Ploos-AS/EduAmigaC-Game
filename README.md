@@ -17,18 +17,19 @@ By the end of the course, the reader should be able to:
 - build equivalent games with the ACE framework;
 - understand what ACE abstracts away and when direct programming is useful;
 - profile and optimise games for classic 68k Amiga systems;
-- package and test games using the Ploos Amiga development/runtime infrastructure.
+- build, package and test games using the public course toolchain and a suitable Amiga runtime;
 
 ## Teaching model
 
-The course deliberately uses two tracks:
+The course deliberately uses three first-class tracks:
 
-1. **Direct C track** — build the game systems yourself using AmigaOS APIs and documented Amiga hardware facilities.
-2. **ACE track** — solve the same kinds of problems using ACE.
+1. **Plain Amiga C** — build the game systems yourself using AmigaOS APIs and documented Amiga hardware facilities.
+2. **ACE** — solve the same kinds of problems using ACE.
+3. **Sevgi Engine** — solve the same game-programming problems at a higher engine abstraction level.
 
-Where useful, chapters end with a comparison showing the direct implementation beside the ACE implementation.
+Where useful, lessons and projects compare all three implementations. Low-level topics do not invent artificial framework equivalents: the framework tracks instead explain the relevant abstraction boundary.
 
-The goal is not to present one approach as universally better. The reader should understand both the machine and the framework.
+The goal is not to present one approach as universally better. The reader should understand the machine, the frameworks, and the trade-offs between abstraction levels.
 
 ## Planned course structure
 
