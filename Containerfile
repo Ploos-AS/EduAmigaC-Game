@@ -8,7 +8,7 @@ ARG AMIGA_GCC_REV=b58d16de6b9ca921825b8a1f1783a64224ad6cf4
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
       autoconf automake bison ca-certificates curl flex g++ gcc gettext git \
-      libreadline-dev make patch rsync xz-utils \
+      lbzip2 libreadline-dev make patch rsync xz-utils \
  && rm -rf /var/lib/apt/lists/*
 
 COPY container/toolchain-components.lock /tmp/toolchain-components.lock
