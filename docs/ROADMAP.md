@@ -8,7 +8,7 @@
 - [x] Define common lesson pattern.
 - [x] Define project ladder.
 - [x] Define target machine profiles.
-- [ ] Define toolchain and runtime dependencies.
+- [x] Define toolchain and runtime dependencies.
 - [ ] Define repository directory convention.
 - [ ] Add licensing files and source-level licensing policy.
 - [ ] Add publishing integration.
