@@ -29,7 +29,7 @@ cmake --build "$ROOT/tests/smoke/ace/build" --parallel
 echo "== Sevgi Engine =="
 test -d /opt/course/deps/sevgi
 test -f /opt/course/deps/sevgi/README.md
-test -f /opt/course/deps/sevgi/Makefile
+test -f /opt/course/deps/sevgi/makefile
 echo "Sevgi source/templates present; native Sevgi Editor execution is an Amiga-side test."
 
 echo "Smoke tests passed."
