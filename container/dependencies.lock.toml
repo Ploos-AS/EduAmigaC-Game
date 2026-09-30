@@ -24,13 +24,13 @@ install_prefix = "/opt/course/deps/cmake-toolchains"
 [ace]
 source = "https://github.com/AmigaPorts/ACE.git"
 revision = "9e6ce064897cbd6b517d56fbd15da43919261a56"
-install_prefix = "/opt/ace"
+install_prefix = "/opt/course/deps/ace"
 
 [sevgi]
 source = "https://github.com/alpyre/Sevgi_Engine.git"
 revision = "fcf1b2166351911d49baa6641cf7a359075721a2"
 branch = "master"
-install_prefix = "/opt/sevgi"
+install_prefix = "/opt/course/deps/sevgi"
 
 [policy]
 moving_branches_allowed_in_release = false
