@@ -4,17 +4,19 @@
 
 EduAmigaC-Game must have a reproducible reference environment without hiding the actual Amiga development toolchain from the student.
 
-Ploos **amiga-dev** is the reference build environment.
+The **student environment is course-owned and independent of Ploos infrastructure**.
 
-Ploos **amiga-runtime** is the reference emulator/runtime qualification environment.
+The course publishes a dedicated OCI development image containing the documented compiler, build tools and course dependencies. A student must be able to complete the course using that image or an equivalent local installation.
 
-They are infrastructure, not part of the game-programming API. Course source code must not depend on a Ploos-only runtime library merely to build or run.
+Ploos **amiga-dev** and **amiga-runtime** may be used internally for development, CI qualification and maintenance, but they are not student prerequisites and must not appear as required steps in the learning path.
+
+Course source code must not depend on Ploos-only runtime libraries or private infrastructure merely to build or run.
 
 ## Compiler baseline
 
-The reference C toolchain is the Bebbo Amiga GCC toolchain as provided and qualified by amiga-dev.
+The reference C toolchain is the Bebbo Amiga GCC toolchain.
 
-The exact compiler and binutils versions used for releases should be pinned by the infrastructure rather than copied into every lesson.
+The student OCI image pins and publishes the exact compiler, binutils and supporting tool versions used by a course release.
 
 Baseline examples must remain compatible with the CPU profile declared by the lesson or project.
 
@@ -81,11 +83,11 @@ Do not silently download arbitrary moving branches during a release build.
 
 A student should ultimately have two supported ways to work:
 
-### Reference/container workflow
+### Course OCI workflow
 
-Use amiga-dev to obtain the known-good toolchain and build environment.
+Use the public EduAmigaC-Game course OCI image to obtain the known-good student toolchain and build environment.
 
-This is the preferred path for CI, course validation and reproducibility.
+This is the preferred student path and must work without access to amiga-dev, amiga-runtime or other Ploos infrastructure repositories.
 
 ### Native/local workflow
 
@@ -95,9 +97,9 @@ The course should document this path so students understand that Docker/OCI is c
 
 ## Runtime qualification
 
-amiga-runtime provides the reproducible emulator side of the course.
+The student workflow should document ordinary emulator use independently of amiga-runtime.
 
-Course projects should be runnable through named profiles matching docs/TARGETS.md.
+Internally, Ploos may additionally qualify course projects through amiga-runtime using named profiles matching docs/TARGETS.md.
 
 The runtime layer should eventually support automated launch, timeout, log/evidence capture and deterministic checks where the program permits them.
 
@@ -151,8 +153,9 @@ Warnings must not be routinely suppressed globally. A necessary suppression shou
 
 A course release should record enough information to reproduce its examples:
 
-- amiga-dev version/tag or immutable reference;
-- amiga-runtime version/tag or immutable reference;
+- student OCI image tag and immutable digest;
+- compiler/toolchain versions;
+- internal amiga-dev/amiga-runtime qualification references when relevant to maintainers, but never as student prerequisites;
 - ACE revision used;
 - Sevgi Engine revision used;
 - project target profile;
@@ -169,8 +172,8 @@ The course repository owns:
 - course-specific build descriptions;
 - course assets.
 
-amiga-dev owns reusable development-environment/toolchain infrastructure.
+The course owns its **student OCI definition** and student-facing setup documentation.
 
-amiga-runtime owns reusable emulator/runtime qualification infrastructure.
+amiga-dev and amiga-runtime own reusable internal development and qualification infrastructure.
 
-Do not copy large pieces of those infrastructure repositories into the course.
+Student documentation must remain usable without those Ploos infrastructure repositories. Do not copy their internals into the course; instead package the public upstream tools needed by students directly in the course OCI image.
