@@ -34,7 +34,7 @@ ARG CMAKE_TOOLCHAINS_REV=c579e46732af7398a09360dce4a6fb8d91d3f447
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-      ca-certificates cmake git make \
+      ca-certificates cmake file git make \
  && rm -rf /var/lib/apt/lists/*
 
 COPY --from=toolchain-builder /opt/amiga /opt/amiga
