@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build student OCI
-        run: docker build --progress=plain -t eduamigac-game:ci .
+        run: docker build --progress=plain -f Containerfile -t eduamigac-game:ci .
 
       - name: Run smoke tests
         run: |
