@@ -1,6 +1,6 @@
 # EduAmigaC-Game
 
-Practical Amiga game programming in C — both **without a game framework** and **with ACE**.
+Practical Amiga game programming in C — with **plain Amiga C**, **ACE**, and **Sevgi Engine**.
 
 EduAmigaC-Game is part of the Ploos AS educational series. It assumes basic C knowledge and builds naturally on EduC and EduAmigaC.
 
@@ -123,7 +123,7 @@ The course should contain several increasingly complete projects, for example:
 - shoot-'em-up
 - final original game project
 
-Each larger project should have both a direct-C path and, where practical, an ACE path.
+Each larger project should have **plain Amiga C**, **ACE**, and **Sevgi Engine** paths where technically practical. The three versions should be used to compare architecture, amount of code, control, portability, performance and abstraction.
 
 ## Target baseline
 
@@ -153,7 +153,7 @@ Documentation/course material: **CC BY 4.0** unless otherwise noted.
 
 Example software: **MIT** unless otherwise noted.
 
-Third-party components such as ACE retain their own licenses.
+Third-party components such as ACE and Sevgi Engine retain their own licenses.
 
 ## Status
 
